@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 import { addComment } from "../../lib/api";
 
@@ -23,6 +22,7 @@ const NewCommentForm = (props) => {
     // optional: Could validate here
 
     sendRequest({ commentData: { text: enteredText }, quoteId: props.quoteId });
+    commentTextRef.current.value = "";
   };
 
   return (
